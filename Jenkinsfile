@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'java7'
+    }
+
+  }
   stages {
     stage('Buzz Build') {
       steps {
@@ -13,6 +18,7 @@ pipeline {
         stage('Buzz Test') {
           steps {
             sh 'echo Test > Test.txt'
+            node(label: 'docker')
           }
         }
 
