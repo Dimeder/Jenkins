@@ -15,13 +15,7 @@ pipeline {
           }
         }
 
-        stage('') {
-          agent {
-            docker {
-              image 'busybox'
-            }
-
-          }
+        stage('error') {
           steps {
             sleep 2
           }
