@@ -3,11 +3,7 @@ pipeline {
   stages {
     stage('Buzz Build') {
       steps {
-        sh '''
-
-
-
-      ./jenkins/build.sh'''
+        sh 'echo Build'
         archiveArtifacts(artifacts: 'target/*.jar', fingerprint: true)
       }
     }
@@ -15,6 +11,7 @@ pipeline {
     stage('Buzz Test') {
       steps {
         sh 'echo Test'
+        junit '***/reports/**/*.'
       }
     }
 
