@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Buzz Build') {
       steps {
-        sh 'echo Build > Build.txt'
+        sh 'echo $BUZZ_NAME > Build.txt'
         archiveArtifacts(artifacts: '*.txt', fingerprint: true)
       }
     }
@@ -14,5 +14,8 @@ pipeline {
       }
     }
 
+  }
+  environment {
+    BUZZ_NAME = ' Worker Bee'
   }
 }
