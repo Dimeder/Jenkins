@@ -1,21 +1,21 @@
 pipeline {
   agent any
   stages {
-    stage('Buzz Stage') {
+    stage('Fluffy Build') {
       steps {
-        echo 'Bees Buzz!'
+        echo 'Placeholder'
       }
     }
 
-    stage('Bees Bees') {
+    stage('Fluffy Test') {
       steps {
-        echo 'Bees Bees'
+        echo 'Placeholder'
       }
     }
 
-    stage('Buzz, Bees, Buzz!') {
+    stage('Fluffy Deploy') {
       steps {
-        echo 'Buzz, Bees, Buzz!'
+        echo 'Placeholder'
       }
     }
 
