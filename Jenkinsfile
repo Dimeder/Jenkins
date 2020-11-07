@@ -7,9 +7,26 @@ pipeline {
   }
   stages {
     stage('Buzz Build') {
-      steps {
-        sh 'echo $BUZZ_NAME > Build.txt'
-        archiveArtifacts(artifacts: '*.txt', fingerprint: true)
+      parallel {
+        stage('Buzz Build') {
+          steps {
+            sh 'echo $BUZZ_NAME > Build.txt'
+            archiveArtifacts(artifacts: '*.txt', fingerprint: true)
+          }
+        }
+
+        stage('') {
+          agent {
+            docker {
+              image 'busybox'
+            }
+
+          }
+          steps {
+            sleep 2
+          }
+        }
+
       }
     }
 
@@ -18,7 +35,6 @@ pipeline {
         stage('Buzz Test') {
           steps {
             sh 'echo Test > Test.txt'
-            node(label: 'docker')
           }
         }
 
