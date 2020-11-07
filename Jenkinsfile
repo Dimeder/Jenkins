@@ -8,9 +8,28 @@ pipeline {
       }
     }
 
-    stage('Buzz Test') {
-      steps {
-        sh 'echo Test > Test.txt'
+    stage('Testing A') {
+      parallel {
+        stage('Buzz Test') {
+          steps {
+            sh 'echo Test > Test.txt'
+          }
+        }
+
+        stage('Testing B') {
+          steps {
+            sh '''sleep 10
+echo done'''
+          }
+        }
+
+        stage('Testing C') {
+          steps {
+            sh '''sleep 10
+echo done'''
+          }
+        }
+
       }
     }
 
