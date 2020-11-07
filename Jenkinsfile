@@ -10,7 +10,7 @@ pipeline {
 
     stage('Buzz Test') {
       steps {
-        sh 'echo Test'
+        sh 'echo Test > Test.txt'
         junit '***/reports/**/*.'
       }
     }
