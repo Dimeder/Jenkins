@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Buzz Build') {
       steps {
-        sh 'echo Build'
-        archiveArtifacts(artifacts: 'target/*.jar', fingerprint: true)
+        sh 'echo Build > Build.txt'
+        archiveArtifacts(artifacts: '*.txt', fingerprint: true)
       }
     }
 
