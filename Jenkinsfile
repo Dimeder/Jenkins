@@ -11,7 +11,6 @@ pipeline {
     stage('Buzz Test') {
       steps {
         sh 'echo Test > Test.txt'
-        junit '*.txt'
       }
     }
 
