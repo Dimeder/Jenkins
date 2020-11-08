@@ -16,7 +16,7 @@ pipeline {
 
     stage('Fluffy Deploy') {
       steps {
-        sh 'Placeholder'
+        sh 'echo Placeholder'
       }
     }
 
