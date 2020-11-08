@@ -1,40 +1,23 @@
 pipeline {
   agent any
   stages {
-    stage('Buzz Build') {
+    stage('Fluffy Build') {
       steps {
-        sh 'echo $BUZZ_NAME > Build.txt'
-        archiveArtifacts(artifacts: '*.txt', fingerprint: true)
+        echo 'Placeholder'
       }
     }
 
-    stage('Testing A') {
-      parallel {
-        stage('Buzz Test') {
-          steps {
-            sh 'echo Test > Test.txt'
-          }
-        }
-
-        stage('Testing B') {
-          steps {
-            sh '''sleep 10
-echo done'''
-          }
-        }
-
-        stage('Testing C') {
-          steps {
-            sh '''sleep 10
-echo done'''
-          }
-        }
-
+    stage('Fluffy Test') {
+      steps {
+        sh 'Placeholder'
       }
     }
 
-  }
-  environment {
-    BUZZ_NAME = ' Worker Bee'
+    stage('Fluffy Deploy') {
+      steps {
+        sh 'Placeholder'
+      }
+    }
+
   }
 }
