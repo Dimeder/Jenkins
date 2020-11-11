@@ -1,28 +1,14 @@
 pipeline {
   agent {
     docker {
-      image 'ubuntu:latest'
+      image 'node:14-alpine'
     }
 
   }
   stages {
-    stage('Fluffy Build') {
+    stage('Test') {
       steps {
-        sh 'echo Another Placeholder'
-        sh 'echo Edited Placeholder.'
-      }
-    }
-
-    stage('Fluffy Test') {
-      steps {
-        sh ' sleep 5'
-        sh 'echo Success!'
-      }
-    }
-
-    stage('Fluffy Deploy') {
-      steps {
-        sh 'echo Placeholder'
+        sh 'node --version'
       }
     }
 
